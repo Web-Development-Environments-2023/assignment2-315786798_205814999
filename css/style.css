@@ -1,0 +1,66 @@
+:root{
+  --background-darktheme-color: #121212;
+  --text-darktheme-color: white;
+  --font-titles: Merriweather, serif;
+  --font-paras: "Open Sans", sans-serif;
+  --font-nav : Roboto, sans-serif;
+}
+
+body{  
+background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(https://i.pinimg.com/originals/f4/34/e8/f434e86cdc40ef068b7783d150f8a65c.gif);
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+
+#loginline{
+  border-left-style: groove;
+  z-index: 9999;
+}
+h1{
+font-family: var(--font-titles);
+color:var(--text-darktheme-color);
+/* border-bottom-style: groove; */
+}
+
+label{
+font-family: var(--font-titles);
+color:var(--text-darktheme-color);
+}
+
+.navList{
+border-bottom-style: groove;
+border-top-style: groove;
+list-style: none;
+backdrop-filter: blur(1rem);
+background: hsl(0, 0%, 100% , 0.05);
+}
+.navList a{
+  text-decoration: none;
+  font-size: 20px;
+  font-family: var(--font-nav);
+}
+
+.navList a:link {
+color: white;
+}
+
+.navList a:visited {
+color: white;
+}
+
+.navList a:hover {
+opacity: 0.6;
+}
+
+.navList a:active {
+opacity: 0.4;
+}
+
+#game div{
+  font-family: var(--font-titles);
+  color:var(--text-darktheme-color);
+  font-size: 20px;
+}
+
+

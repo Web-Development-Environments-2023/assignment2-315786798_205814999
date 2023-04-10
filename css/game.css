@@ -1,0 +1,5 @@
+canvas{
+    box-shadow: gray 0px 0px 30px;
+    border: 1px solid #ccc; /* Set the border width and color */
+    border-radius: 20px; /* Set the border radius */
+}

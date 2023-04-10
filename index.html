@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My Website</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="images/x-icon" href="">
+        <link rel="stylesheet" href="css/layout.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/game.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans">
+        <!-- Bootstrap imports for modal -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        
+    </head>
+
+    <body>
+        <header>
+            <div id="header">
+                <div id="logo" >
+                  <img src="images/cat-invaders-logo.png" style="width: 400px;height: 100px;">
+                </div>
+                <div class="topNav" id="topNav">                                
+                    <nav>                         
+                        <ul class="navList" id="navList">
+                            <li><a href="#" onclick="showGame()">Play!</a></li>                                   
+                            <a href="#" data-toggle="modal" data-target="#myModal">About</a>
+                            <li><a href="#" id="register-link" onclick="showDiv('register')">Register</a></li>
+                            <div id="loginline"></div>
+                            <li><a href="#" id="loginmenu" onclick="showDiv('login')">Login</a></li>
+                        </ul>   
+                               
+                    </nav>
+                     
+                </div>
+            </div> 
+                       
+        </header>       
+        <main>
+            <div class="main" id="main">
+              
+                <div class = "content" id="welcome">
+                    <h1>ID1:315786798</h1>
+                    <h1>ID2:205814999</h1>
+                    <h1>Login and register button on the top menu.</h1>
+                </div>
+                <div class = "content" id="game">
+                    <div style="display:flex;justify-content:space-between;width:100%;">
+                        <div>Score: <span id="score">0</span></div>
+                        <div>Lives: <span id="lives">0</span></div>
+                        <div>Time: <span id="time">0:00</span></div>
+                        <div><button id="resetButton" tabindex="-1">Reset</button></div>
+                      </div>
+                    <canvas id="thegame"></canvas>
+                    <script type="module" src="js/game.js"></script>
+                </div>
+                <div class = "content" id="login">
+                    <form>
+                        <div>
+                          <label for="username">Username:</label>
+                          <input type="text" id="username" name="username">
+                        </div>
+                        <div>
+                          <label for="password">Password:</label>
+                          <input type="password" id="password" name="password">
+                        </div>
+                        <button type="submit">Login</button>
+                      </form>
+                </div>
+                <div class="content" id="config" style="display:none;">
+                    <h1>Configuration</h1>
+                    <form id="config-form">
+                      <div>
+                        <label for="leftKey">Left key:</label>
+                        <input type="text" id="leftKey" name="leftKey" value="ArrowLeft">
+                      </div>
+                      <div>
+                        <label for="rightKey">Right key:</label>
+                        <input type="text" id="rightKey" name="rightKey" value="ArrowRight">
+                      </div>
+                      <div>
+                        <label for="upKey">Up key:</label>
+                        <input type="text" id="upKey" name="upKey" value="ArrowUp">
+                      </div>
+                      <div>
+                        <label for="downKey">Down key:</label>
+                        <input type="text" id="downKey" name="downKey" value="ArrowDown">
+                      </div>
+                      <div>
+                        <label for="shootKey">Shoot key:</label>
+                        <input type="text" id="shootKey" name="shootKey" value="Space">
+                      </div>
+                      <div>
+                        <label for="remainingTime">Time(seconds):</label>
+                        <input type="number" id="remainingTime" name="remainingTime" value="120" min="120">
+                      </div>
+                      <button type="button" onclick="showValidKeys()">Show Valid Keys</button>
+                      <button type="submit" id="startbtn" style="background-color: red; color: white;">Start Game !</button>
+                    </form>
+
+                  </div>
+                  
+                  
+                <div class = "content" id="register">
+                  <form id="register-form" onsubmit="return validateForm()">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username-register" name="username"><br>
+                  
+                    <label for="password">Password:</label>
+                    <input type="password" id="password-register" name="password"><br>
+                  
+                    <label for="password-validation">Password (again):</label>
+                    <input type="password" id="password-validation" name="password-validation"><br>
+                  
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name"><br>
+                  
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name"><br>
+                  
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email"><br>
+                  
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday"><br>
+                  
+                    <input type="submit" value="Register">
+                  </form>
+                </div> 
+                    <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                              <div class="modal-header text-center">
+                                <h4 class="modal-title">About</h4>
+                                <button type="button" class="close pull-right" data-dismiss="modal">&times;</button>
+                              </div>
+                          <div class="modal-body">
+                              <p><bold>EVIL</bold> Cats from the planet "KssKsssKsssss" are about to invade.</p>
+                              <p>Your objective is to destroy them in under 2 minutes and 3 lives !</p>
+                              <p>Use keyboard arrows to navigate your ship.</p>
+                              <p>Use space to shoot at the <bold>EVIL</bold> cats.</p>
+                          </br>
+                              <p>Made By : Ron Volnets, Idan Gal</p>
+                              <p>Problems encountered:</p>
+                              <p>The account managment was a little tricky and it's still not perfect.</p>
+                              <p>Particularly we used localStorage, and we weren't sure how to properly deal with page refreshes</p>
+                              <p>Using modal properly required Bootstrap and jQuery.</p>
+                              <p>Integration between the game world and the website(ui for example) caused some spagetthi code.</p>
+                              <p>Getting the configuration keys from the form and to the game code caused a lot of problems.</p>
+                              <p>We wanted to add explosions when an enemy is hit, but for the explosion to appear we had to set a delay</p>
+                              <p>which on rare occasions might double the points than intended from an enemy.</p>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                  document.addEventListener('keyup', function(event) {
+                    if (event.keyCode === 27) {
+                      var closeButton = document.querySelector('#myModal .modal-header button.close');
+                      closeButton.click();
+                    }
+                  });
+                </script>
+            </div>      
+        </main>
+        <footer>
+            <div class="footer" id="footer">
+                <p style="color: white;">&#169; Contact us at fakemail@mailfake.meow </p>
+            </div>        
+        </footer>
+    </body>
+    <script src="js/AccountManagment.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/PageConfiguration.js"></script>
+    
+    
+   
+</html>

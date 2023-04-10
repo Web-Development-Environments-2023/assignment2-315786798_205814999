@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+}
+
+#logo{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height:100px;
+  text-align: center;
+  font-size: 50px;
+  
+}
+
+#topNav{
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#main {
+  margin-top:181px; /* Add a margin-top equal to the height of the header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navList{    
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 15px;
+  
+}
+
+#footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#myModal {
+  z-index: 9999;
+}
