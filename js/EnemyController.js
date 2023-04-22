@@ -56,7 +56,7 @@ export default class EnemyController {
                     this.enemyDeathSound2.currentTime=0;
                     this.enemyDeathSound2.play();
                     enemy.image.src = 'images/explosion.png'
-                    //enemyRow.splice(enemyIndex,1);
+                    //enemyRow.splice(enemyIndex,1);           
                     setTimeout(() => {
                         enemyRow.splice(enemyIndex, 1);
                     }, 30);
